@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/context
+       http://www.springframework.org/schema/context/spring-context.xsd">
+
+    <!-- 加上它才可以用注解自动装配bean -->
+    <context:annotation-config/>
+
+    <bean id="cat222" class="com.hand.spring.entity.Cat">
+        <property name="name" value="kitty222"/>
+    </bean>
+    <bean id="cat111" class="com.hand.spring.entity.Cat">
+        <property name="name" value="kitty"/>
+    </bean>
+<!--    <bean class="com.hand.spring.entity.Cat">-->
+<!--        <property name="name" value="kitty222"/>-->
+<!--    </bean>-->
+    <bean id="dog111" class="com.hand.spring.entity.Dog">
+        <property name="name" value="puppy"/>
+    </bean>
+<!--    <bean name="dog" class="com.hand.spring.entity.Dog">-->
+<!--        <property name="name" value="puppy"/>-->
+<!--    </bean>-->
+    <bean id="dog222" class="com.hand.spring.entity.Dog">
+        <property name="name" value="puppy222"/>
+    </bean>
+
+    <!-- byName自动注入：取名（id或name）叫bean中的setXxx的xxx，则能实现自动注入 -->
+    <!-- 注意： id/name都不能重复，且只能全小写-->
+    <bean id="person" class="com.hand.spring.entity.Person" autowire="byName">
+        <property name="name" value="cjh"/>
+    </bean>
+
+    <!-- byType自动注入：类型与bean中的类型相同，则能实现自动注入 -->
+    <!-- 注意：不能出现两个相同类型的bean -->
+    <bean id="person2" class="com.hand.spring.entity.Person" autowire="byType">
+        <property name="name" value="cjh2"/>
+    </bean>
+
+</beans>

@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- 用name方式为变量注入值 -->
+<!--    <bean id="user" class="com.hand.spring.entity.User">-->
+<!--        <property name="name" value="RDJ" />-->
+<!--        <property name="age" value="56" />-->
+<!--        <property name="admin" value="true" />-->
+<!--    </bean>-->
+
+    <!-- 构造方法注入 -->
+    <!-- 构造方法：1. 用name变量名方式为变量注入值 -->
+<!--    <bean id="user" class="com.hand.spring.entity.User">-->
+<!--        <constructor-arg name="name" value="RDJ" />-->
+<!--        <property name="age" value="56" />-->
+<!--        <property name="admin" value="true" />-->
+<!--    </bean>-->
+
+    <!-- 构造方法：2. 用type类型方式为变量注入值 -->
+<!--    <bean id="user" class="com.hand.spring.entity.User">-->
+<!--        <constructor-arg type="java.lang.String" value="RDJ" />-->
+<!--        <constructor-arg name="age" value="56" />-->
+<!--        <constructor-arg type="boolean" value="true" />-->
+<!--    </bean>-->
+
+    <!-- 也可以匹配多个同类型的，但是会按照顺序对同类型的参数进行匹配 -->
+    <!-- 不推荐！！！容易导致混乱 -->
+<!--    <bean id="user" class="com.hand.spring.entity.User">-->
+<!--        <constructor-arg type="java.lang.String" value="RDJ" />-->
+<!--        <constructor-arg name="age" value="56" />-->
+<!--        <constructor-arg type="boolean" value="true" />-->
+<!--        <constructor-arg type="java.lang.String" value="daddy"/>-->
+<!--    </bean>-->
+
+    <!-- 构造方法：3. 用index下标方式为变量注入值 -->
+<!--    <bean id="user" class="com.hand.spring.entity.User">-->
+<!--        <constructor-arg index="0" value="RDJ" />-->
+<!--        <constructor-arg name="age" value="56" />-->
+<!--        <constructor-arg type="boolean" value="true" />-->
+<!--        <constructor-arg index="3" value="daddy"/>-->
+<!--    </bean>-->
+
+    <!-- 混合 -->
+    <!-- 如果三种方式会起冲突，貌似会报错 -->
+    <!-- 作用域：默认单例模式singleton -->
+    <bean id="user" class="com.hand.spring.entity.User" scope="singleton">
+        <constructor-arg name="name" value="RDJ" />
+<!--        <constructor-arg type="java.lang.String" value="56" />-->
+<!--        <constructor-arg index="0" value="daddy"/>-->
+<!--        <constructor-arg name="age" value="56" />-->
+        <constructor-arg type="int" value="56" />
+<!--        <constructor-arg index="1" value="56" />-->
+<!--        <constructor-arg name="admin" value="true" />-->
+<!--        <constructor-arg type="boolean" value="true" />-->
+        <constructor-arg index="2" value="true" />
+<!--        <constructor-arg index="0" value="daddy"/>-->
+    </bean>
+
+    <bean id="user2" class="com.hand.spring.entity.User2">
+        <constructor-arg name="name" value="RDJ"/>
+        <constructor-arg name="password" value="iloveu3000"/>
+    </bean>
+</beans>

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- Setter注入 -->
+    <bean id="TonyStark" class="com.hand.spring.entity.Hero">
+        <property name="name" value="IRON MAN"/>
+
+        <property name="lover" ref="lover"/>
+
+        <property name="friends">
+            <array>
+                <value>Steve Rogers</value>
+                <value>Natasha Romanoff</value>
+                <value>Bruce Banner</value>
+                <value>Clint Barton</value>
+                <value>Thor Odinson</value>
+            </array>
+        </property>
+
+        <property name="family">
+            <list>
+                <value>Pepper</value>
+                <value>Morgen</value>
+                <value>Howard</value>
+                <value>Maria</value>
+            </list>
+        </property>
+
+        <property name="relations">
+            <map>
+                <entry key="enemy" value="Thenos"/>
+                <entry key="buddy" value="Rodes"/>
+                <entry key="security" value="Happy"/>
+            </map>
+        </property>
+
+        <property name="achievements">
+            <set>
+                <value>Defeat Obadine</value>
+                <value>Defeat whiplash</value>
+                <value>Defeat Loki</value>
+            </set>
+        </property>
+
+        <property name="info">
+            <props>
+                <prop key="career">billionaire, playboy, superhero</prop>
+            </props>
+        </property>
+
+        <property name="ps">
+            <null/>
+        </property>
+    </bean>
+
+    <bean id="lover" class="com.hand.spring.entity.Lover">
+        <property name="name" value="Pepper"/>
+        <property name="gender" value="female"/>
+    </bean>
+</beans>

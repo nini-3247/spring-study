@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- 用name方式为变量注入值 -->
+    <!-- 作用域 = prototype: 每次调用会创建一个新的对象 -->
+    <bean id="user3" class="com.hand.spring.entity.User" scope="prototype">
+        <constructor-arg name="name" value="RDJ" />
+        <constructor-arg name="age" value="56" />
+        <constructor-arg name="admin" value="true" />
+    </bean>
+
+    <bean id="user4" class="com.hand.spring.entity.User2">
+        <constructor-arg name="name" value="RDJ"/>
+        <constructor-arg name="password" value="iloveu3000"/>
+    </bean>
+</beans>

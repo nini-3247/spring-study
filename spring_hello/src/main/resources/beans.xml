@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="hello" class="com.hand.spring.entity.Hello">
+        <property name="value" value="helloValue"></property>
+    </bean>
+
+    <bean id="mySqlDaoImpl" class="com.hand.spring.dao.impl.HelloMySqlDaoImpl"></bean>
+
+    <bean id="oracleDaoImpl" class="com.hand.spring.dao.impl.HelloOracleDaoImpl"></bean>
+
+    <bean id="sqlServerDaoImpl" class="com.hand.spring.dao.impl.HelloSqlServerDaoImpl"></bean>
+
+    <bean id="HelloServiceImpl" class="com.hand.spring.service.impl.HelloServiceImpl">
+<!--        <property name="helloDao" ref="mySqlDaoImpl"></property>-->
+<!--        <property name="helloDao" ref="oracleDaoImpl"></property>-->
+        <property name="helloDao" ref="sqlServerDaoImpl"></property>
+    </bean>
+
+</beans>

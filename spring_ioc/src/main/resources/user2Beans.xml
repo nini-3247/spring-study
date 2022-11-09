@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:c="http://www.springframework.org/schema/c"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- p命名空间：代替property -->
+    <bean id="user2_1" class="com.hand.spring.entity.User2" p:name="RDJ" p:password="lov3247"/>
+
+    <!-- c命名空间：代替constructor-->
+    <bean id="user2_2" class="com.hand.spring.entity.User2" c:name="tony" c:password="lov3000"/>
+</beans>
